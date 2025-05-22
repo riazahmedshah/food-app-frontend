@@ -1,16 +1,10 @@
 import "@/App.css"
-import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
+import LandingPage from "./LandingPage"
 
 const Home = () => {
     return(
         <div>
-            Home page...
-            <Button>
-                <Link to="/auth">
-                    Sign up
-                </Link>
-            </Button>
+            <LandingPage/>
         </div>
     )
 }
