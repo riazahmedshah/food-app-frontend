@@ -8,7 +8,7 @@ import { PasswordInput } from "./PasswordInput";
 import { SocialButton } from "./SocialButtons";
 import { LoginFormData } from "../types/authTypes";
 
-// Login Form Component
+
 interface LoginFormProps {
   onSubmit: (data: LoginFormData) => void;
   onForgotPassword: () => void;
@@ -36,7 +36,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword
       
       <CardContent className="space-y-6">
         <div className="space-y-6">
-          {/* Email Field */}
           <div className="space-y-2">
             <Label htmlFor="email" className="text-gray-600">Email Address</Label>
             <Input
@@ -50,7 +49,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword
             />
           </div>
 
-          {/* Password Field */}
           <PasswordInput
             value={formData.password}
             onChange={(value) => setFormData(prev => ({ ...prev, password: value }))}
@@ -64,8 +62,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword
                 id="remember"
                 checked={formData.rememberMe}
                 onCheckedChange={(checked) => 
-                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                  setFormData((prev: any) => ({ ...prev, rememberMe: checked as boolean }))
+                  setFormData( prev => ({ ...prev, rememberMe: checked as boolean }))
                 }
                 className="border-blue-900"
               />
@@ -83,7 +80,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword
             </Button>
           </div>
 
-          {/* Login Button */}
           <Button 
             onClick={handleSubmit} 
             className="w-full h-12 bg-green-500 hover:bg-green-600 text-white font-semibold"
@@ -92,7 +88,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword
           </Button>
         </div>
 
-        {/* Divider */}
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t border-gray-300" />
@@ -102,7 +97,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword
           </div>
         </div>
 
-        {/* Social Login */}
         <div className="grid grid-cols-2 gap-4">
           <SocialButton provider="google" onClick={() => onSocialLogin('google')} />
           <SocialButton provider="facebook" onClick={() => onSocialLogin('facebook')} />
