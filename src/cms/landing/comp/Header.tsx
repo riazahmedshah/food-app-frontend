@@ -21,7 +21,7 @@ export const Header = () => {
           <Link to="/auth">Login</Link>
         </Button>
         <Button variant="default" className="rounded-full bg-blue-900 hover:bg-blue-800">
-          Partner with us
+          <Link to="/partners">Partner with us</Link>
         </Button>
       </div>
     </header>

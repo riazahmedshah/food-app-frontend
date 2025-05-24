@@ -18,8 +18,8 @@ interface LoginFormProps {
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit, onForgotPassword, onSocialLogin }) => {
   const [formData, setFormData] = useState<LoginFormData>({
-    email: '',
-    password: '',
+    email: 'test1@gmail.com',
+    password: '123456',
     rememberMe: false
   });
 

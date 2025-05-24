@@ -1,4 +1,4 @@
-import { Header } from "../components/Header";
+import { Header } from "../landing/comp/Header";
 import { CtaSection } from "../landing/comp/section/CtaSection";
 import { FeaturesSection } from "../landing/comp/section/FeaturesSection";
 import { FinalCta } from "../landing/comp/section/FinalCta";

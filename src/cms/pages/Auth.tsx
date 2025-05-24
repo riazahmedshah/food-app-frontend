@@ -1,25 +1,26 @@
 import { useState } from "react";
-import { AuthHeader } from "../components/AuthHeader";
+import { AuthHeader } from "../Auth/comp/AuthHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { LoginForm } from "../components/Login";
-import { SignUpForm } from "../components/Signup";
-import { LoginFormData, SignUpFormData } from "../types/authTypes";
+import { LoginForm } from "../Auth/comp/Login";
+import { SignUpForm } from "../Auth/comp/Signup";
+import { LoginFormData, SignUpFormData } from "../Auth/types/authTypes";
 import axios from "axios"
 import { BASE_URL } from "@/utils/constants";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const AuthPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'login' | 'signup'>('login');
+  const navigate = useNavigate()
 
   const handleLogin = async(data: LoginFormData) => {
     console.log('Login data:', data);
-    // Handle login logic here
     const res = await axios.post(`${BASE_URL}/auth/signin`,data,{withCredentials:true})
     console.log(res.data);
-    // Example: await loginUser(data);
+    navigate("/restaurants")
     alert(`Login attempt with: ${data.email}`);
   };
 
